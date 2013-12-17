@@ -10,8 +10,11 @@ from netCDF4 import Dataset
 import dateutil.parser
 import requests
 import calendar
-from datetime import datetime
+from datetime import datetime, timedelta
 import numpy as np
+import os
+import time
+import sys
 
 
 
@@ -19,6 +22,30 @@ sos_ns = '{http://www.opengis.net/sos/1.0}'
 om_ns = '{http://www.opengis.net/om/1.0}'
 gml_ns = '{http://www.opengis.net/gml/3.2}'
 ioos_ns = '{http://www.noaa.gov/ioos/0.6.1}'
+
+
+class ScraperError(Exception):
+    pass
+
+class NoObservations(ScraperError):
+    pass
+
+class NoPosition(ScraperError):
+    pass
+
+class SOSError(ScraperError):
+    pass
+
+class UnitsError(ScraperError):
+    pass
+
+class NoTimePeriod(ScraperError):
+    pass
+
+class AggregationError(ScraperError):
+    pass
+
+
 
 class WeatherFlowSOS:
     base_url = 'http://d.weatherflow.com/sos/sos.pl'
@@ -85,14 +112,14 @@ class WeatherFlowSOS:
         self.response = BeautifulSoup(response.text, 'xml')
         obs_list = self.response.find_all(attrs={'name':'Station1NumberOfObservationsTimes'})
         if obs_list is None or len(obs_list) < 1:
-            raise Exception('No observations')
+            raise NoObservations('No observations')
 
         self.num_obs = int(obs_list[0].text)
 
     def get_latlon(self):
         pos = self.response.find_all('Point', attrs={'gml:id' : 'Station1LatLon'})
         if pos is None or len(pos) < 1:
-            raise Exception("Station Position omitted")
+            raise NoPosition("Station Position omitted")
         lat, lon = (float(i) for i in pos[0].find('pos').text.split(' '))
         return lat, lon
 
@@ -103,15 +130,15 @@ class WeatherFlowSOS:
         uom = self.variables[variable]
         obs = self.response.find_all('Quantity', attrs={'name':variable})
         if obs is None or len(obs) < 1:
-            raise Exception('No observations for %s' % variable)
+            raise NoObservations('No observations for %s' % variable)
 
         if len(obs) != self.num_obs:
-            raise Exception("%s observations doesn't match the station's number of observations" % variable)
+            raise SOSError("%s observations doesn't match the station's number of observations" % variable)
 
         points = []
         for o in obs:
             if o.attrs['uom'] != uom:
-                raise Exception("%s is expecting %s units, received %s" % (variable, uom, o.attrs['uom']))
+                raise UnitsError("%s is expecting %s units, received %s" % (variable, uom, o.attrs['uom']))
             if 'xsi:nil' in o.attrs:
                 points.append(None)
                 continue
@@ -126,10 +153,10 @@ class WeatherFlowSOS:
         times = self.response.find_all('timePosition')
 
         if times is None or len(times) < 1:
-            raise Exception('No time positions')
+            raise NoObservations('No time positions')
 
         if len(times) != self.num_obs:
-            raise Exception('Number of timesteps does not match number of observations')
+            raise SOSError('Number of timesteps does not match number of observations')
 
         tpoints = []
         for t in times:
@@ -142,7 +169,7 @@ class WeatherFlowSOS:
     def get_time_period(self):
         period = self.response.find('TimePeriod')
         if period is None:
-            raise Exception("No time period defined")
+            raise NoTimePeriod("No time period defined")
         t0 = period.find('beginPosition').text
         t1 = period.find('endPosition').text
         return t0, t1
@@ -152,6 +179,41 @@ class Scraper:
     def __init__(self, filename, sos):
         self.filename = filename
         self.sos = sos
+
+    def aggregate_nc(self):
+
+        nc = Dataset(self.filename, 'a')
+        time_var = nc.variables['time']
+        shape = time_var.shape
+        t_end = time_var[-1]
+        times = np.array(self.sos.get_times())
+        if times[0] <= t_end:
+            raise AggregationError('Newer values must come later than existing values')
+        time_var[shape[0]:] = times
+
+        wind_speed = nc.variables['wind_speed']
+        wind_direction = nc.variables['wind_direction']
+        wind_gust = nc.variables['wind_gust']
+
+        for i,val in enumerate(self.sos.get_variable('WindSpeed')):
+            k = i + shape[0]
+            if val:
+                wind_speed[k] = val
+
+        for i,val in enumerate(self.sos.get_variable("WindDirection")):
+            k = i + shape[0]
+            if val:
+                wind_direction[k] = val
+
+        for i,val in enumerate(self.sos.get_variable('WindGust')):
+            k = i + shape[0]
+            if val:
+                wind_gust[k] = val
+
+        time_start, time_end = self.sos.get_time_period()
+        nc.time_coverage_end = time_end
+
+        nc.close()
 
     def create_nc(self):
 
@@ -246,5 +308,78 @@ class Scraper:
         nc.close()
 
 
+class AutomatedScraper(Scraper):
+    hour_cutoff = 24
+
+    def __init__(self, file_root, station, start_time=None):
+        if not os.path.exists(file_root):
+            os.makedirs(file_root)
+        self.file_root = file_root
+
+        self.sos = WeatherFlowSOS()
+        self.station = station
+        self.initialized = False
+        self.i=0
+        self.start_time = start_time
+
+    def initialize(self):
+        now = time.time()
+        dtg = datetime.utcfromtimestamp(now)
+        self.start_time = self.start_time or datetime(dtg.year, dtg.month, dtg.day, dtg.hour) - timedelta(hours=1)
+
+        filename = '%s_%s.nc' % (self.station.replace('-','_'),
+                self.start_time.strftime('%Y_%m_%d_%H'))
+        self.filename = os.path.join(self.file_root, filename)
+        if os.path.exists(self.filename):
+            print 'Dataset already initialized'
+            self.initialized=True
+            return self.scrape()
+        t0 = self.start_time
+        t1 = self.start_time + timedelta(hours=self.i+1)
+        self.sos.get_observations(self.station, t0, t1)
+        self.create_nc()
+        print 'Initialized %s' % self.filename
+        self.i+=1
+        self.initialized = True
 
 
+    def scrape(self):
+        if self.i >= self.hour_cutoff:
+            self.start_time = self.start_time + timedelta(hours=self.i)
+            self.i = 0
+            return self.initialize()
+
+        if not self.initialized:
+            return self.initialize()
+
+        t0 = self.start_time + timedelta(hours=self.i)
+        t1 = t0 + timedelta(hours=1)
+        self.sos.get_observations(self.station,
+                t0,
+                t1)
+                
+        self.aggregate_nc()
+        print 'Scraped',t0.isoformat(),'-',t1.isoformat()
+        self.i+=1
+
+def main():
+    basedir = sys.argv[1]
+    scrapers = {s : AutomatedScraper(os.path.join(basedir, s.replace('-','_')), 
+                                     s, 
+                                     None)
+                                 for s in WeatherFlowSOS.stations.iterkeys()}
+
+    while True:
+        for station, scraper in scrapers.iteritems():
+            print 'Scraping',station
+            try:
+                scraper.scrape()
+            except ScraperError as e:
+                from traceback import print_exc
+                print_exc(e)
+                continue
+        time.sleep(3600)
+
+
+if __name__ == '__main__':
+    main()
