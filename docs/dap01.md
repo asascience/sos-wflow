@@ -8,27 +8,37 @@ Python is installed at the system level, but the version is too old for some of 
 
 ### Tomcat Instances
 
-Apache `httpd` is running on port 80 and acting as a proxy to two tomcat instances, one a production instance and the other a development instance.
+Apache `httpd` is running on port 80 and acting as a proxy to three tomcat instances, detailed below.
 
-#### Production THREDDS
+#### STABLE THREDDS
 
-Production THREDDS is running on DAP01. To my knowledge, it doesn't currently have NcSOS installed. It has the default configurations and no new datasets, yet.
+Stable version of TDS (4.3.18) and latest stable NcSOS (RC8), displaying Weatherflow data.
+
+- root: `/var/www/tomcats/stable`
+- catalog: `/var/www/tomcats/stable/content/thredds/catalog.xml`
+- service-script: `service thredds-stable`
+- web: http://sos.maracoos.org/stable/catalog/catalog.html
+
+#### EDS THREDDS
+
+EDS THREDDS is running on DAP01. No configuration yet.
 
 - root: `/var/www/tomcats/eds`
 - catalog: `/var/www/tomcats/eds/content/thredds/catalog.xml`
-- service-script: `service eds-thredds`
+- service-script: `service thredds-eds`
+- web: http://sos.maracoos.org/eds/catalog/catalog.html
 
-#### Dev THREDDS
+#### Dev THREDDS (4.4.x)
 
-Development THREDDS has RC7 NcSOS installed. It also has Weatherflow aggregated, static and updating datasets. One thing to note is that the Thredds servlet is running as "dev" instead of "thredds" so the URL paths all start with `/dev/`
+Development THREDDS has NcSOS 4.4 series branch installed (asascience-open/ncsos@44dd72239b3b365d2081410c9064ec22a48e0dce), displaying Weatherflow data.
 
 - root: `/var/www/tomcats/thredds`
 - catalog: `/var/www/tomcats/thredds/content/thredds/catalog.xml`
-- service-script: `service dev-thredds`
+- service-script: `service thredds-dev`
+- web: http://sos.maracoos.org/dev/catalog/catalog.html
 
 ### Scraper Instance
 
-I haven't been able to write a proper daemon or service script so I just ran the scraper as-is using the tomcat user, with `nohup`. It should run fine as long as the server doesn't get restarted.
-
+- python: `/opt/python/bin/python`
 - script: `/opt/scraper/scraper.py`
 - data directory: `/data/thredds-data/weatherflow`
