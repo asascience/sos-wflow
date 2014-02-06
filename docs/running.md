@@ -12,6 +12,6 @@
 
 # Running the Scraper
 
-        python scraper.py <path-to-weatherflow root>
+        python scraper.py <path-to-weatherflow root> <# hours to scrape> <optional starting time>
 
 
