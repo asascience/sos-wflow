@@ -106,8 +106,7 @@ class WeatherFlowSOS:
         self.station = station
 
         response = requests.get(self.base_url, params=params)
-        if response.status_code != 200:
-            response.raise_for_status()
+        response.raise_for_status()
 
         self.response = BeautifulSoup(response.text, 'xml')
         obs_list = self.response.find_all(attrs={'name':'Station1NumberOfObservationsTimes'})
@@ -187,8 +186,10 @@ class Scraper:
         shape = time_var.shape
         t_end = time_var[-1]
         times = np.array(self.sos.get_times())
-        if times[0] <= t_end:
-            raise AggregationError('Newer values must come later than existing values')
+
+        if np.amin(times) <= np.amax(t_end):
+            raise AggregationError('Newer values must come later than existing values (min of new data: %s, max of old data %s)' % (datetime.fromtimestamp(np.amin(times)), datetime.fromtimestamp(np.amax(t_end))))
+
         time_var[shape[0]:] = times
 
         wind_speed = nc.variables['wind_speed']
@@ -309,77 +310,79 @@ class Scraper:
 
 
 class AutomatedScraper(Scraper):
-    hour_cutoff = 24
+    def __init__(self, file_root, station, interval=1, start_time=None):
 
-    def __init__(self, file_root, station, start_time=None):
         if not os.path.exists(file_root):
             os.makedirs(file_root)
-        self.file_root = file_root
 
-        self.sos = WeatherFlowSOS()
-        self.station = station
-        self.initialized = False
-        self.i=0
-        self.start_time = start_time
-
-    def initialize(self):
-        now = time.time()
-        dtg = datetime.utcfromtimestamp(now)
-        self.start_time = self.start_time or datetime(dtg.year, dtg.month, dtg.day, dtg.hour) - timedelta(hours=1)
+        self.file_root  = file_root
+        self.sos        = WeatherFlowSOS()
+        self.station    = station
+        self.interval   = interval
+        self.start_time = start_time or self.now - timedelta(hours=self.interval)
 
         filename = '%s_%s.nc' % (self.station.replace('-','_'),
-                self.start_time.strftime('%Y_%m_%d_%H'))
+                                 self.start_time.strftime('%Y_%m_%d'))
         self.filename = os.path.join(self.file_root, filename)
-        if os.path.exists(self.filename):
-            print 'Dataset already initialized'
-            self.initialized=True
-            return self.scrape()
-        t0 = self.start_time
-        t1 = self.start_time + timedelta(hours=self.i+1)
-        self.sos.get_observations(self.station, t0, t1)
-        self.create_nc()
-        print 'Initialized %s' % self.filename
-        self.i+=1
-        self.initialized = True
 
+    @property
+    def now(self):
+        """
+        Returns now, in UTC, rounded to previous hour.
+        """
+        dtg = datetime.utcnow()
+        the_time = datetime(dtg.year, dtg.month, dtg.day, dtg.hour)
+        return the_time
 
     def scrape(self):
-        if self.i >= self.hour_cutoff:
-            self.start_time = self.start_time + timedelta(hours=self.i)
-            self.i = 0
-            return self.initialize()
 
-        if not self.initialized:
-            return self.initialize()
+        # grab time range from existing file if possible
+        """
+        if os.path.exists(self.filename):
+            nc = Dataset(self.filename, 'a')
+            time_var = nc.variables['time']
+            shape = time_var.shape
+            t_end = time_var[-1]
 
-        t0 = self.start_time + timedelta(hours=self.i)
-        t1 = t0 + timedelta(hours=1)
-        self.sos.get_observations(self.station,
-                t0,
-                t1)
-                
-        self.aggregate_nc()
-        print 'Scraped',t0.isoformat(),'-',t1.isoformat()
-        self.i+=1
+            t0 = t_end # plus a bit?
+            t1 = t0 + timedelta(hours=1)
+
+            nc.close()
+        """
+
+        # scrape start_time for an hour
+        t0 = self.start_time
+        t1 = self.start_time + timedelta(hours=self.interval)
+
+        # grab data
+        self.sos.get_observations(self.station, t0, t1)
+
+        # drop into NC file
+        if os.path.exists(self.filename):
+            self.aggregate_nc()
+        else:
+            self.create_nc()
+
+        print 'Scraped',t0.isoformat(),'-',t1.isoformat(), "to", self.filename
 
 def main():
-    basedir = sys.argv[1]
-    scrapers = {s : AutomatedScraper(os.path.join(basedir, s.replace('-','_')), 
-                                     s, 
-                                     None)
-                                 for s in WeatherFlowSOS.stations.iterkeys()}
+    basedir    = sys.argv[1]
+    interval   = int(sys.argv[2])
+    try:
+        start_time = datetime.strptime(sys.argv[3], "%Y-%m-%d %H:%M:%S")
+    except:
+        start_time = None
 
-    while True:
-        for station, scraper in scrapers.iteritems():
-            print 'Scraping',station
-            try:
-                scraper.scrape()
-            except ScraperError as e:
-                from traceback import print_exc
-                print_exc(e)
-                continue
-        time.sleep(3600)
+    scrapers = {s : AutomatedScraper(os.path.join(basedir, s.replace('-','_')), s, interval, start_time)
+                    for s in WeatherFlowSOS.stations.iterkeys()}
 
+    for station, scraper in scrapers.iteritems():
+        print 'Scraping', station
+        try:
+            scraper.scrape()
+        except ScraperError as e:
+            from traceback import print_exc
+            print_exc(e)
 
 if __name__ == '__main__':
     main()
