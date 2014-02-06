@@ -39,6 +39,7 @@ Development THREDDS has NcSOS 4.4 series branch installed (asascience-open/ncsos
 
 ### Scraper Instance
 
+- tomcat user is running scraper hourly via cron
 - python: `/opt/python/bin/python`
-- script: `/opt/scraper/scraper.py`
+- script: `/opt/sos-wflow/scraper.py`
 - data directory: `/data/thredds-data/weatherflow`
