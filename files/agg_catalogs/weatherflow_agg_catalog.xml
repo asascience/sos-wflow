@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="all" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/stable/dodsC/" />
+    <!--service name="http" serviceType="HTTPServer" base="/stable/fileServer/" /-->
+    <service name="sos" serviceType="NcSOS" base="/stable/sos/" />
+    <!--service name="wcs" serviceType="WCS" base="/thredds/wcs/" /-->
+    <!--service name="wms" serviceType="WMS" base="/thredds/wms/" /-->
+    <!--service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" /-->
+  </service>
+  <dataset name="Weatherflow Aggregated Wind Observations">
+    <dataset name="Station-700 Aggregated Wind Observations" ID="wflow700-agg" urlPath="wflow700-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="Weatherflow Aggregated Wind Observations" />
+        <attribute name="summary" value="Aggregated Point Dataset of Wind Observations by Weatherflow Stations" />
+        <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+          <scan location="file:/data/thredds-data/weatherflow/station_700/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station-1127 Aggregated Wind Observations" ID="wflow1127-agg" urlPath="wflow1127-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="Weatherflow Aggregated Wind Observations" />
+        <attribute name="summary" value="Aggregated Point Dataset of Wind Observations by Weatherflow Stations" />
+        <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+          <scan location="file:/data/thredds-data/weatherflow/station_1127/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station-397 Aggregated Wind Observations" ID="wflow397-agg" urlPath="wflow397-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="Weatherflow Aggregated Wind Observations" />
+        <attribute name="summary" value="Aggregated Point Dataset of Wind Observations by Weatherflow Stations" />
+        <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+          <scan location="file:/data/thredds-data/weatherflow/station_397/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station-44554 Aggregated Wind Observations" ID="wflow44554-agg" urlPath="wflow44554-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="Weatherflow Aggregated Wind Observations" />
+        <attribute name="summary" value="Aggregated Point Dataset of Wind Observations by Weatherflow Stations" />
+        <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+          <scan location="file:/data/thredds-data/weatherflow/station_44554/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station-46182 Aggregated Wind Observations" ID="wflow46182-agg" urlPath="wflow46182-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="Weatherflow Aggregated Wind Observations" />
+        <attribute name="summary" value="Aggregated Point Dataset of Wind Observations by Weatherflow Stations" />
+        <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+          <scan location="file:/data/thredds-data/weatherflow/station_46182/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station-47091 Aggregated Wind Observations" ID="wflow47091-agg" urlPath="wflow47091-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="Weatherflow Aggregated Wind Observations" />
+        <attribute name="summary" value="Aggregated Point Dataset of Wind Observations by Weatherflow Stations" />
+        <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+          <scan location="file:/data/thredds-data/weatherflow/station_47091/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station-48242 Aggregated Wind Observations" ID="wflow48242-agg" urlPath="wflow48242-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="Weatherflow Aggregated Wind Observations" />
+        <attribute name="summary" value="Aggregated Point Dataset of Wind Observations by Weatherflow Stations" />
+        <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+          <scan location="file:/data/thredds-data/weatherflow/station_48242/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station-48328 Aggregated Wind Observations" ID="wflow48328-agg" urlPath="wflow48328-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="Weatherflow Aggregated Wind Observations" />
+        <attribute name="summary" value="Aggregated Point Dataset of Wind Observations by Weatherflow Stations" />
+        <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+          <scan location="file:/data/thredds-data/weatherflow/station_48328/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station-697 Aggregated Wind Observations" ID="wflow697-agg" urlPath="wflow697-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="Weatherflow Aggregated Wind Observations" />
+        <attribute name="summary" value="Aggregated Point Dataset of Wind Observations by Weatherflow Stations" />
+        <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+          <scan location="file:/data/thredds-data/weatherflow/station_697/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+  </dataset>
+ 
+</catalog>

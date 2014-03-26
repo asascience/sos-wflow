@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="all" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/stable/dodsC/" />
+    <!--service name="http" serviceType="HTTPServer" base="/stable/fileServer/" /-->
+    <service name="sos" serviceType="NcSOS" base="/stable/sos/" />
+    <!--service name="wcs" serviceType="WCS" base="/thredds/wcs/" /-->
+    <!--service name="wms" serviceType="WMS" base="/thredds/wms/" /-->
+    <!--service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" /-->
+  </service>
+
+  <dataset name="HRECOS Hydrographic and Meterological Aggregated Data"> 
+    <dataset name="Station HRLCK8H Aggregated Data" ID="stationHRLCK8H-agg" urlPath="stationHRLCK8H-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="HRECOS Aggregated Station HRLCK8H Data" />
+        <attribute name="summary" value="Aggregated Dataset of HRECOS Station HRLCK8H" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/hrecos/HRLCK8H/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station HRLCK8M Aggregated Data" ID="stationHRLCK8M-agg" urlPath="stationHRLCK8M-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="HRECOS Aggregated Station HRLCK8M Data" />
+        <attribute name="summary" value="Aggregated Dataset of HRECOS Station HRLCK8M" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/hrecos/HRLCK8M/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station HRALBPH Aggregated Data" ID="stationHRALBPH-agg" urlPath="stationHRALBPH-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="HRECOS Aggregated Station HRALBPH Data" />
+        <attribute name="summary" value="Aggregated Dataset of HRECOS Station HRALBPH" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/hrecos/HRALBPH/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station HRALBPM Aggregated Data" ID="stationHRALBPM-agg" urlPath="stationHRALBPM-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="HRECOS Aggregated Station HRALBPM Data" />
+        <attribute name="summary" value="Aggregated Dataset of HRECOS Station HRALBPM" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/hrecos/HRALBPM/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station HRTVBM Aggregated Data" ID="stationHRTVBM-agg" urlPath="stationHRTVBM-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="HRECOS Aggregated Station HRTVBM Data" />
+        <attribute name="summary" value="Aggregated Dataset of HRECOS Station HRTVBM" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/hrecos/HRTVBM/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station HRMARPH Aggregated Data" ID="stationHRMARPH-agg" urlPath="stationHRMARPH-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="HRECOS Aggregated Station HRMARPH Data" />
+        <attribute name="summary" value="Aggregated Dataset of HRECOS Station HRMARPH" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/hrecos/HRMARPH/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station HRWSTPTH Aggregated Data" ID="stationHRWSTPTH-agg" urlPath="stationHRWSTPTH-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="HRECOS Aggregated Station HRWSTPTH Data" />
+        <attribute name="summary" value="Aggregated Dataset of HRECOS Station HRWSTPTH" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/hrecos/HRWSTPTH/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station HRPMNTH Aggregated Data" ID="stationHRPMNTH-agg" urlPath="stationHRPMNTH-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="HRECOS Aggregated Station HRPMNTH Data" />
+        <attribute name="summary" value="Aggregated Dataset of HRECOS Station HRPMNTH" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/hrecos/HRPMNTH/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station HRPMNTM Aggregated Data" ID="stationHRPMNTM-agg" urlPath="stationHRPMNTM-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="HRECOS Aggregated Station HRPMNTM Data" />
+        <attribute name="summary" value="Aggregated Dataset of HRECOS Station HRPMNTM" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/hrecos/HRPMNTM/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Station HRPIER84 Aggregated Data" ID="stationHRPIER84-agg" urlPath="stationHRPIER84-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="HRECOS Aggregated Station HRPIER84 Data" />
+        <attribute name="summary" value="Aggregated Dataset of HRECOS Station HRPIER84" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/hrecos/HRPIER84/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+<!-- INSERT HERE -->
+  </dataset>
+
+ 
+</catalog>

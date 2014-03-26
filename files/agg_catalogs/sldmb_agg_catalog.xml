@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="all" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/stable/dodsC/" />
+    <!--service name="http" serviceType="HTTPServer" base="/stable/fileServer/" /-->
+    <service name="sos" serviceType="NcSOS" base="/stable/sos/" />
+    <!--service name="wcs" serviceType="WCS" base="/thredds/wcs/" /-->
+    <!--service name="wms" serviceType="WMS" base="/thredds/wms/" /-->
+    <!--service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" /-->
+  </service>
+
+
+  <dataset name="SLDMB Sea Surface Temperature Measurements">
+    <dataset name="Buoy 43294 Sea Surface Temperatures" ID="buoy43294-agg" urlPath="buoy43294-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43294 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43294" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43294/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38924 Sea Surface Temperatures" ID="buoy38924-agg" urlPath="buoy38924-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38924 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38924" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38924/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43255 Sea Surface Temperatures" ID="buoy43255-agg" urlPath="buoy43255-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43255 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43255" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43255/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43208 Sea Surface Temperatures" ID="buoy43208-agg" urlPath="buoy43208-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43208 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43208" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43208/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38757 Sea Surface Temperatures" ID="buoy38757-agg" urlPath="buoy38757-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38757 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38757" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38757/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43334 Sea Surface Temperatures" ID="buoy43334-agg" urlPath="buoy43334-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43334 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43334" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43334/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38797 Sea Surface Temperatures" ID="buoy38797-agg" urlPath="buoy38797-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38797 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38797" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38797/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38685 Sea Surface Temperatures" ID="buoy38685-agg" urlPath="buoy38685-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38685 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38685" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38685/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38805 Sea Surface Temperatures" ID="buoy38805-agg" urlPath="buoy38805-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38805 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38805" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38805/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43048 Sea Surface Temperatures" ID="buoy43048-agg" urlPath="buoy43048-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43048 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43048" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43048/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 39025 Sea Surface Temperatures" ID="buoy39025-agg" urlPath="buoy39025-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 39025 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 39025" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/39025/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43236 Sea Surface Temperatures" ID="buoy43236-agg" urlPath="buoy43236-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43236 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43236" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43236/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43185 Sea Surface Temperatures" ID="buoy43185-agg" urlPath="buoy43185-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43185 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43185" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43185/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43095 Sea Surface Temperatures" ID="buoy43095-agg" urlPath="buoy43095-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43095 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43095" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43095/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 39019 Sea Surface Temperatures" ID="buoy39019-agg" urlPath="buoy39019-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 39019 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 39019" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/39019/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43105 Sea Surface Temperatures" ID="buoy43105-agg" urlPath="buoy43105-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43105 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43105" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43105/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43176 Sea Surface Temperatures" ID="buoy43176-agg" urlPath="buoy43176-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43176 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43176" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43176/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38857 Sea Surface Temperatures" ID="buoy38857-agg" urlPath="buoy38857-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38857 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38857" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38857/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38823 Sea Surface Temperatures" ID="buoy38823-agg" urlPath="buoy38823-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38823 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38823" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38823/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43196 Sea Surface Temperatures" ID="buoy43196-agg" urlPath="buoy43196-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43196 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43196" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43196/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38900 Sea Surface Temperatures" ID="buoy38900-agg" urlPath="buoy38900-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38900 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38900" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38900/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38818 Sea Surface Temperatures" ID="buoy38818-agg" urlPath="buoy38818-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38818 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38818" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38818/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 39035 Sea Surface Temperatures" ID="buoy39035-agg" urlPath="buoy39035-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 39035 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 39035" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/39035/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43336 Sea Surface Temperatures" ID="buoy43336-agg" urlPath="buoy43336-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43336 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43336" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43336/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38988 Sea Surface Temperatures" ID="buoy38988-agg" urlPath="buoy38988-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38988 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38988" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38988/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43386 Sea Surface Temperatures" ID="buoy43386-agg" urlPath="buoy43386-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43386 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43386" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43386/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43369 Sea Surface Temperatures" ID="buoy43369-agg" urlPath="buoy43369-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43369 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43369" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43369/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43357 Sea Surface Temperatures" ID="buoy43357-agg" urlPath="buoy43357-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43357 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43357" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43357/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38775 Sea Surface Temperatures" ID="buoy38775-agg" urlPath="buoy38775-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38775 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38775" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38775/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38796 Sea Surface Temperatures" ID="buoy38796-agg" urlPath="buoy38796-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38796 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38796" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38796/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43264 Sea Surface Temperatures" ID="buoy43264-agg" urlPath="buoy43264-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43264 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43264" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43264/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38846 Sea Surface Temperatures" ID="buoy38846-agg" urlPath="buoy38846-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38846 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38846" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38846/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38918 Sea Surface Temperatures" ID="buoy38918-agg" urlPath="buoy38918-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38918 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38918" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38918/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38987 Sea Surface Temperatures" ID="buoy38987-agg" urlPath="buoy38987-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38987 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38987" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38987/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43049 Sea Surface Temperatures" ID="buoy43049-agg" urlPath="buoy43049-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43049 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43049" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43049/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38869 Sea Surface Temperatures" ID="buoy38869-agg" urlPath="buoy38869-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38869 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38869" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38869/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43262 Sea Surface Temperatures" ID="buoy43262-agg" urlPath="buoy43262-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43262 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43262" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43262/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38821 Sea Surface Temperatures" ID="buoy38821-agg" urlPath="buoy38821-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38821 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38821" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38821/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43238 Sea Surface Temperatures" ID="buoy43238-agg" urlPath="buoy43238-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43238 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43238" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43238/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38944 Sea Surface Temperatures" ID="buoy38944-agg" urlPath="buoy38944-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38944 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38944" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38944/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38845 Sea Surface Temperatures" ID="buoy38845-agg" urlPath="buoy38845-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38845 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38845" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38845/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38650 Sea Surface Temperatures" ID="buoy38650-agg" urlPath="buoy38650-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38650 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38650" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38650/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38883 Sea Surface Temperatures" ID="buoy38883-agg" urlPath="buoy38883-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38883 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38883" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38883/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 39011 Sea Surface Temperatures" ID="buoy39011-agg" urlPath="buoy39011-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 39011 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 39011" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/39011/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38965 Sea Surface Temperatures" ID="buoy38965-agg" urlPath="buoy38965-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38965 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38965" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38965/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 39024 Sea Surface Temperatures" ID="buoy39024-agg" urlPath="buoy39024-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 39024 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 39024" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/39024/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43416 Sea Surface Temperatures" ID="buoy43416-agg" urlPath="buoy43416-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43416 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43416" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43416/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43164 Sea Surface Temperatures" ID="buoy43164-agg" urlPath="buoy43164-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43164 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43164" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43164/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43330 Sea Surface Temperatures" ID="buoy43330-agg" urlPath="buoy43330-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43330 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43330" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43330/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38960 Sea Surface Temperatures" ID="buoy38960-agg" urlPath="buoy38960-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38960 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38960" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38960/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 39034 Sea Surface Temperatures" ID="buoy39034-agg" urlPath="buoy39034-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 39034 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 39034" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/39034/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43201 Sea Surface Temperatures" ID="buoy43201-agg" urlPath="buoy43201-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43201 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43201" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43201/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38828 Sea Surface Temperatures" ID="buoy38828-agg" urlPath="buoy38828-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38828 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38828" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38828/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43312 Sea Surface Temperatures" ID="buoy43312-agg" urlPath="buoy43312-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43312 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43312" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43312/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43188 Sea Surface Temperatures" ID="buoy43188-agg" urlPath="buoy43188-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43188 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43188" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43188/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43378 Sea Surface Temperatures" ID="buoy43378-agg" urlPath="buoy43378-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43378 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43378" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43378/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43227 Sea Surface Temperatures" ID="buoy43227-agg" urlPath="buoy43227-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43227 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43227" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43227/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43500 Sea Surface Temperatures" ID="buoy43500-agg" urlPath="buoy43500-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43500 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43500" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43500/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43137 Sea Surface Temperatures" ID="buoy43137-agg" urlPath="buoy43137-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43137 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43137" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43137/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 43173 Sea Surface Temperatures" ID="buoy43173-agg" urlPath="buoy43173-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 43173 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 43173" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/43173/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38910 Sea Surface Temperatures" ID="buoy38910-agg" urlPath="buoy38910-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38910 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38910" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38910/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38817 Sea Surface Temperatures" ID="buoy38817-agg" urlPath="buoy38817-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38817 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38817" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38817/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Buoy 38803 Sea Surface Temperatures" ID="buoy38803-agg" urlPath="buoy38803-agg.ncml" dataType="Point">
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+        <dataType>Point</dataType>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="SLDMB Buoy 38803 Aggregated Sea Surface Temperatures" />
+        <attribute name="summary" value="Aggregated Trajectory Dataset of Sea Surface Temperatures of SLDMB Buoy 38803" />
+        <aggregation dimName="time" type="joinExisting" >
+          <scan location="file:/data/thredds-data/sldmb/38803/" suffix=".nc" />
+        </aggregation>
+      </netcdf>
+    </dataset>
+<!-- INSERT HERE -->
+  </dataset>
+
+</catalog>
+
+

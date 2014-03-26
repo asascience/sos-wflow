@@ -18,6 +18,7 @@ Stable version of TDS (4.3.18) and latest stable NcSOS (RC8), displaying Weather
 - catalog: `/var/www/tomcats/stable/content/thredds/catalog.xml`
 - service-script: `service thredds-stable`
 - web: http://sos.maracoos.org/stable/catalog/catalog.html
+- sflow, hrecos, sldmb catalog: see specific subsections below
 
 #### EDS THREDDS
 
@@ -37,9 +38,34 @@ Development THREDDS has NcSOS 4.4 series branch installed (asascience-open/ncsos
 - service-script: `service thredds-dev`
 - web: http://sos.maracoos.org/dev/catalog/catalog.html
 
-### Scraper Instance
+### SOS Weatehrflow Scraper Instance
 
 - tomcat user is running scraper hourly via cron
 - python: `/opt/python/bin/python`
 - script: `/opt/sos-wflow/scraper.py`
 - data directory: `/data/thredds-data/weatherflow`
+- daily catalog: `/var/www/tomcats/stable/content/thredds/daily_catalogs/weatherflow_catalog.xml`
+- agg catalog: `/var/www/tomcats/stable/content/thredds/agg_catalogs/weatherflow_agg_catalog.xml`
+
+### SLDM Weatehrflow Scraper Instance
+
+- tomcat user is running scraper daily via cron
+- python: `/opt/python/bin/python`
+- script: `/opt/sldmb/SLDMB.py`
+- data directory: `/data/thredds-data/sldmb`
+- daily catalog: `/var/www/tomcats/stable/content/thredds/daily_catalogs/sldm_catalog.xml`
+- agg catalog: `/var/www/tomcats/stable/content/thredds/agg_catalogs/sldm_agg_catalog.xml`
+- agg template: `/var/www/tomcats/stable/content/thredds/agg_catalogs/sldm_agg_catalog.nodata`
+
+### HRECOS Weatehrflow Scraper Instance
+
+- tomcat user is running scraper daily via cron
+- python: `/opt/python/bin/python`
+- script: `/opt/hrecos/HRECOS_Scraper.py`
+- data directory: `/data/thredds-data/hrecos`
+- daily catalog: `/var/www/tomcats/stable/content/thredds/daily_catalogs/hrecos_catalog.xml`
+- agg catalog: `/var/www/tomcats/stable/content/thredds/agg_catalogs/hrecos_agg_catalog.xml`
+- agg template: `/var/www/tomcats/stable/content/thredds/agg_catalogs/hrecos_agg_catalog.nodata`
+
+
+

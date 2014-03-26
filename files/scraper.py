@@ -258,7 +258,7 @@ class Scraper:
         lon_var.long_name = 'Longitude'
         lon_var.standard_name = 'longitude'
         lon_var.axis = 'X'
-        lon_var.units = 'degrees_north'
+        lon_var.units = 'degrees_east'
 
         time_var = nc.createVariable('time', 'f8', ('time',))
         time_var.long_name = 'Time'
